@@ -11,12 +11,13 @@
         </div>
         <h1 class="coming-soon" align="center">Mohon maaf website kami sedang dalam perbaikan!<br>Kami segera menyapa Anda kembali!</h1>
         <div class="row">
-            <form class="form-kontak" action="">
-                <input name="name" type="text" class="form-control" placeholder="Nama Anda" required>
-                <input name="email" type="email" class="form-control" placeholder="Email Anda" required>
-                <input name="subject" type="text" class="form-control" placeholder="Subjek Pesan" required>
-                <textarea name="message" id="" class="form-control" placeholder="Pesan Anda" required></textarea>
-                <button class="btn" type="submit">Kirim</button>
+            <form class="form-kontak" [formGroup]="rForm" (ngSubmit)="addPost(rForm.value)">
+                <input formControlName="name" type="text" class="form-control" placeholder="Nama Lengkap" required>
+                <input formControlName="email" type="email" class="form-control" placeholder="Email Anda" required>
+                <input formControlName="subject" type="text" class="form-control" placeholder="Subjek Pesan" required>
+                <textarea formControlName="message" class="form-control" placeholder="Pesan Anda" required></textarea>
+                <input type="submit" class="btn" value="Kirim">
+                <!--<button class="btn" type="submit">Kirim</button>-->
             </form>
         </div>
         <ul class="soc-med">
